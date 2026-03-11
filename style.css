@@ -1,0 +1,1792 @@
+/* --- Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text */
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+/* --- Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a:hover {
+    color: #4facfe; /* Light blue accent on hover */
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    overflow: hidden; /* Prevents scroll on hero page only */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: -webkit-linear-gradient(45deg, #ffffff, #a1c4fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient text effect */
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* --- Buttons --- */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Style for "View Portfolio" (Outline) */
+.btn-outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Style for "Start a Project" (Filled) */
+.btn-filled {
+    background-color: #4facfe;
+    border: 2px solid #4facfe;
+    color: #fff;
+}
+
+.btn-filled:hover {
+    background-color: transparent;
+    color: #4facfe;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    header {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* --- Portfolio Page Specifics --- */
+
+/* Add spacing so the fixed header doesn't cover content */
+.page-header {
+    margin-top: 100px; 
+    text-align: center;
+    padding: 2rem;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #888;
+}
+
+/* The Grid Container */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole grid on screen */
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    /* This creates 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; /* Space between the boxes */
+}
+
+/* Individual Grid Items */
+.grid-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* The Placeholder Box (Replace this with <img> later) */
+.placeholder-box {
+    background-color: #333; /* Dark Grey box */
+    height: 300px; /* Square-ish aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px dashed #555; /* Dashed line to show it's a placeholder */
+}
+
+/* Project Text below image */
+.project-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Footer CTA */
+.portfolio-footer {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.portfolio-footer p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* --- Responsive Grid --- */
+/* On Tablets (2 columns) */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* On Mobile (1 column) */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.scroll-indicator {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.portfolio-project {
+    background: #1f1f1f;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.portfolio-project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* --- Process Page Specifics --- */
+
+.process-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Space between steps */
+}
+
+/* The Step Box */
+.process-step {
+    display: flex;
+    align-items: flex-start; /* Aligns number with the top of the text */
+    gap: 2rem;
+    background-color: #222; /* Slightly lighter than background */
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid #4facfe; /* Blue accent line on the left */
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateX(10px); /* Slight slide to the right on hover */
+    background-color: #2a2a2a;
+}
+
+/* The Big Number (01, 02...) */
+.step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4facfe;
+    opacity: 0.5;
+    line-height: 1;
+}
+
+/* Text Content */
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.step-content p {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Bottom CTA specific to Process page */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #151515; /* Darker footer area */
+    margin-top: 2rem;
+}
+
+.cta-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Mobile Responsiveness for Process --- */
+@media (max-width: 600px) {
+    .process-step {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Contact Page Specifics --- */
+
+.contact-container {
+    max-width: 600px; /* Narrower width for better readability */
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 120px; /* Space for fixed header */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ccc;
+    margin-left: 5px;
+}
+
+/* Input Fields Styling */
+input, select, textarea {
+    background-color: #2a2a2a;
+    border: 2px solid #2a2a2a; /* Same color border initially */
+    padding: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+/* When the user clicks a field */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4facfe; /* Blue glow border */
+    background-color: #333;
+}
+
+/* Submit Button Override */
+.submit-btn {
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Direct Contact Text */
+.direct-contact {
+    text-align: center;
+    margin-top: 3rem;
+    color: #888;
+}
+
+.direct-contact a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.direct-contact a:hover {
+    color: #4facfe;
+}
+
+/* --- Process Hint on Contact Page --- */
+
+.process-hint {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.process-hint a {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 4px;
+    position: relative;
+}
+
+.process-hint a::after {
+    content: "â†’";
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.process-hint a:hover {
+    color: #4facfe;
+}
+
+.process-hint a:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* --- UPDATED HERO SECTION ADDITIONS --- */
+
+/* 1. The About Snippet (New) */
+.about-snippet {
+    margin-top: 3rem;      /* Space below buttons */
+    margin-bottom: 3rem;   /* Space above process steps */
+    max-width: 600px;      /* Keeps text narrow and readable */
+    margin-left: auto;     /* Centers the box */
+    margin-right: auto;    /* Centers the box */
+    text-align: center;
+    
+    /* Animation: Fades in slightly after buttons */
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.about-snippet h3 {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;           /* Subtle Grey */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-snippet p {
+    font-size: 1rem;
+    line-height: 1.6;      /* Good breathing room for reading */
+    color: #ccc;           /* Lighter grey text */
+}
+
+/* --- MICRO ABOUT SECTION --- */
+
+.about-snippet {
+    margin-top: 4.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.about-divider {
+    width: 56px;
+    height: 2px;
+    background-color: #4facfe;
+    margin: 0 auto 2rem auto;
+    opacity: 0.4;
+}
+
+.about-snippet h3 {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4facfe;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-snippet p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #bbbbbb;
+}
+
+.about-emphasis {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Logo refinement */
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .about-snippet {
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+
+    .about-snippet p {
+        font-size: 0.9rem;
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.6;
+    animation: bounce 1.5s infinite;
+}
+
+.scroll-indicator .arrow {
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid #4facfe;
+    border-bottom: 2px solid #4facfe;
+    transform: rotate(-45deg);
+}
+
+/* --- HOMEPAGE PORTFOLIO PREVIEW --- */
+
+.home-portfolio {
+    padding: 6rem 2rem;
+    background-color: #151515;
+    text-align: center;
+}
+
+.home-portfolio-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-portfolio-header p {
+    color: #888;
+    margin-bottom: 3rem;
+}
+
+.home-portfolio-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.home-project {
+    height: 260px;
+    background-color: #222;
+    border: 1px dashed #444;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.home-project:hover {
+    transform: translateY(-6px);
+}
+
+.home-portfolio-cta {
+    margin-top: 3rem;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .home-portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- HOMEPAGE PROJECT HOVER --- */
+
+.home-project {
+    position: relative;
+    height: 260px;
+    background-color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.home-project:hover {
+    transform: translateY(-6px);
+}
+
+/* Placeholder (acts like image for now) */
+.project-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 700;
+    border: 1px dashed #444;
+}
+
+/* Caption overlay */
+.project-caption {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.home-project:hover .project-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.project-caption h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.project-caption p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.home-project {
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- PORTFOLIO GRID --- */
+
+.portfolio-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Individual project card */
+.portfolio-project {
+    position: relative;
+    height: 300px;
+    background-color: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-project:hover {
+    transform: translateY(-6px);
+}
+
+/* Placeholder acts like image */
+.portfolio-project .project-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 700;
+    border: 1px dashed #444;
+}
+
+/* Hover caption */
+.portfolio-project .project-caption {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-project:hover .project-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-caption h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.project-caption p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   CASE STUDY PAGE STYLES
+   ======================================== */
+
+.case-study {
+    padding-top: 120px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Hero Section */
+.case-hero {
+    text-align: center;
+    margin-bottom: 6rem;
+    padding: 4rem 0;
+}
+
+.case-hero-logo {
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto 3rem auto;
+    background-color: #222;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-hero-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 172, 254, 0.1), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+ /* That bullshit wasted my entire day */
+.case-hero-logo {
+    width: 400px;
+    height: 400px;
+    padding: 2rem;
+}
+
+.case-hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.case-hero-logo .placeholder {
+    font-size: 3rem;
+    color: #555;
+    font-weight: 700;
+}
+
+.case-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.case-hero-tagline {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 400;
+}
+
+/* Project Snapshot */
+.project-snapshot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 6rem;
+    background: linear-gradient(135deg, #1f1f1f 0%, #252525 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid #2a2a2a;
+}
+
+.snapshot-column h3 {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4facfe;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.snapshot-item {
+    margin-bottom: 1.5rem;
+}
+
+.snapshot-item h4 {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.snapshot-item p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.snapshot-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.snapshot-item ul li {
+    color: #fff;
+    margin-bottom: 0.3rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.snapshot-item ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+}
+
+/* Content Sections */
+.case-section {
+    margin-bottom: 5rem;
+}
+
+.case-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.case-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4facfe, transparent);
+}
+
+.case-section p {
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.case-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.case-section ul li {
+    padding: 1rem 0 1rem 2rem;
+    position: relative;
+    color: #ccc;
+    line-height: 1.6;
+    border-left: 2px solid #333;
+    margin-bottom: 0.5rem;
+}
+
+.case-section ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0.5rem;
+    color: #4facfe;
+    font-weight: 700;
+}
+
+/* Logo Showcase */
+.logo-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.logo-variant {
+    aspect-ratio: 16/10;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.logo-variant:hover {
+    transform: scale(1.02);
+}
+
+.logo-variant.dark {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.logo-variant.light {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+}
+
+.logo-variant img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.logo-variant .placeholder {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo-variant.dark .placeholder {
+    color: #fff;
+}
+
+.logo-variant.light .placeholder {
+    color: #1a1a1a;
+}
+
+/* Mockups Section */
+.mockups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.mockup-item {
+    background: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease;
+}
+
+.mockup-item:hover {
+    transform: translateY(-5px);
+}
+
+.mockup-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.mockup-placeholder {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.mockup-caption {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.mockup-caption h4 {
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.mockup-caption p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Final Result */
+.final-result {
+    background: linear-gradient(135deg, #1f1f1f 0%, #252525 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.final-result p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* CTA Section */
+.case-cta {
+    text-align: center;
+    padding: 4rem 2rem 6rem 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #2a2a2a;
+}
+
+.case-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.case-cta p {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Back to Portfolio Link */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4facfe;
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    transition: gap 0.3s ease;
+}
+
+.back-link:hover {
+    gap: 0.8rem;
+}
+
+.back-link::before {
+    content: '←';
+}
+
+/* Responsive for Case Study */
+@media (max-width: 768px) {
+    .case-hero h1 {
+        font-size: 2rem;
+    }
+
+    .case-hero-logo {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .project-snapshot {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .logo-showcase,
+    .mockups-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Add to your CSS file */
+.project-snapshot dl {
+    margin: 0;
+}
+
+.project-snapshot dd {
+    margin-left: 0; /* Removes default indentation */
+    margin-bottom: 1rem;
+}
+
+.project-snapshot dt {
+    font-weight: bold;
+    color: #888; /* Or your label color */
+}
+
+/* Utility class for the blue text */
+.text-accent {
+    color: #4facfe;
+}
+
+
+
+/* Fix for the hero logo at the top */
+.case-hero-logo {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto 3rem auto;
+    background-color: #222;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-hero-logo img {
+    max-width: 130%;
+    max-height: 130%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* Fix for the logo variations (dark and light versions) */
+.logo-variant {
+    aspect-ratio: 16/10;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.logo-variant img {
+    max-width: 80%; /* Keep image smaller than container */
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Don't crop the image */
+}
+/* ========================================
+   MISSING UTILITY CLASSES (Critical Fixes)
+   ======================================== */
+
+/* .container - used in case study pages */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* .text-block - paragraph spacing utility */
+.text-block p {
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* .clean-list - used in snapshot for services/values */
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    color: #fff;
+    padding: 0.2rem 0;
+    font-size: 0.95rem;
+}
+
+/* .feature-list - used in concept sections */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+}
+
+.feature-list li {
+    padding: 0.9rem 0 0.9rem 2rem;
+    position: relative;
+    color: #ccc;
+    line-height: 1.6;
+    border-left: 2px solid #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.feature-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0.5rem;
+    color: #4facfe;
+    font-weight: 700;
+}
+
+/* .snapshot-item dt/dd fixes */
+.snapshot-item dt {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.snapshot-item dd {
+    margin-left: 0;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   SITE HEADER (alias for header on case pages)
+   ======================================== */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+/* ========================================
+   SITE FOOTER  — Professional Footer
+   ======================================== */
+
+.site-footer {
+    background-color: #111111;
+    border-top: 1px solid #2a2a2a;
+    padding: 3rem 4rem 2rem 4rem;
+    margin-top: 4rem;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.6rem;
+    color: #fff;
+}
+
+.footer-brand p {
+    color: #666;
+    font-size: 0.85rem;
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: right;
+}
+
+.footer-nav a {
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #4facfe;
+}
+
+.footer-bottom {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer-bottom p {
+    color: #444;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-bottom .footer-tagline {
+    color: #333;
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   MOBILE NAV — Hamburger Menu
+   ======================================== */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+    background: none;
+    border: none;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    header,
+    .site-header {
+        padding: 1.5rem 1.5rem;
+        position: fixed;
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: #111;
+        padding: 5rem 2rem 2rem 2rem;
+        transition: right 0.35s ease;
+        z-index: 150;
+        border-left: 1px solid #2a2a2a;
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1.1rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #2a2a2a;
+        letter-spacing: 1px;
+    }
+
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 140;
+    }
+
+    .nav-overlay.open {
+        display: block;
+    }
+
+    /* Footer mobile */
+    .site-footer {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer-nav {
+        text-align: left;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ========================================
+   SCROLL-TO-TOP BUTTON
+   ======================================== */
+
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background: #4facfe;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 99;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   GLOBAL SMOOTH SCROLL
+   ======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ========================================
+   PROCESS PAGE — What to Expect Section
+   ======================================== */
+
+.expect-section {
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.expect-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.expect-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.expect-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.expect-card {
+    background: #1f1f1f;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.expect-card:hover {
+    transform: translateY(-4px);
+    border-color: #4facfe;
+}
+
+.expect-icon {
+    font-size: 1.4rem;
+    color: #4facfe;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.expect-card h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.expect-card p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.expect-card p strong {
+    color: #fff;
+}
+
+@media (max-width: 700px) {
+    .expect-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expect-section {
+        padding: 3rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+/* ========================================
+   PROCESS PAGE — What to Expect Section
+   ======================================== */
+
+.expect-section {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 0 2rem 4rem 2rem;
+}
+
+.expect-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.expect-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.6rem;
+}
+
+.expect-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.expect-card {
+    background: #1f1f1f;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.expect-card:hover {
+    transform: translateY(-4px);
+    border-color: #4facfe;
+}
+
+.expect-icon {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #4facfe;
+    font-weight: 700;
+}
+
+.expect-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.expect-card p {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.7;
+}
+
+.expect-card p strong {
+    color: #fff;
+}
+
+/* Divider between process steps and expect section */
+.expect-section::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe, transparent);
+    margin: 0 auto 4rem auto;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .expect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   CONTACT PAGE — Package Preview Card
+   ======================================== */
+
+.package-preview {
+    display: none;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.3s ease forwards;
+}
+
+.package-preview.visible {
+    display: block;
+}
+
+.pkg-card {
+    display: none;
+    background: #1f1f1f;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 3px solid #4facfe;
+}
+
+.pkg-card.active {
+    display: block;
+}
+
+.pkg-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pkg-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.pkg-badge {
+    font-size: 0.7rem;
+    background: #4facfe22;
+    color: #4facfe;
+    border: 1px solid #4facfe55;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.pkg-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4facfe;
+}
+
+.pkg-desc {
+    color: #888;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.pkg-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.4rem;
+}
+
+.pkg-includes li {
+    color: #ccc;
+    font-size: 0.85rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.pkg-includes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.pkg-delivery {
+    color: #666;
+    font-size: 0.82rem;
+    margin: 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid #2a2a2a;
+}

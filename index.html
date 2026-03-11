@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPHLYNX Studio | Identity Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo"><a href="index.html">GRAPH<span class="text-accent">LYNX</span></a></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <section class="hero">
+    <div class="hero-content">
+        
+        <h1>Refining Identity.<br>Defining Brands.</h1>
+        <p class="tagline">Minimalist logo design for the modern visionary.</p>
+        
+        <div class="cta-buttons">
+            <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+            <a href="contact.html" class="btn btn-filled">Start a Project</a>
+        </div>
+
+        <!-- Micro About -->
+        <div class="about-snippet">
+            <div class="about-divider"></div>
+
+            <h3>About the studio</h3>
+            <p>
+                A minimalist logo design studio focused on clarity, balance, and timeless identity.
+                We work with startups and growing brands to create logos that scale, last, and make sense.
+            </p>
+
+            <p class="about-emphasis">
+                Clarity over trends. Purpose over noise.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="arrow"></div>
+    </div>
+</section>
+
+<section class="home-portfolio">
+    <div class="home-portfolio-header">
+        <h2>Selected Work</h2>
+        <p>A glimpse into recent identity projects.</p>
+    </div>
+
+    <div class="home-portfolio-grid">
+
+    <a href="portfolio.html#work" class="home-project">
+        <img src="images/logo1.jpg" alt="Logo project preview">
+
+        <div class="project-caption">
+            <h4>Project Name</h4>
+            <p>Minimal / Tech</p>
+        </div>
+    </a>
+
+    <a href="portfolio.html#work" class="home-project">
+        <img src="images/logo2.jpg" alt="Logo project preview">
+        <div class="project-caption">
+            <h4>Project Name</h4>
+            <p>Brand Identity</p>
+        </div>
+    </a>
+
+    <a href="portfolio.html#work" class="home-project">
+        <img src="images/logo3.jpg" alt="Logo project preview">
+        <div class="project-caption">
+            <h4>Project Name</h4>
+            <p>Startup / SaaS</p>
+        </div>
+    </a>
+
+</div>
+
+
+    <div class="home-portfolio-cta">
+        <a href="portfolio.html" class="btn btn-outline">View Full Portfolio</a>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">GRAPH<span class="text-accent">LYNX</span></div>
+            <p>Minimalist logo design for the modern visionary.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+            <a href="portfolio.html">Work</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 GRAPHLYNX Studio. All rights reserved.</p>
+        <p class="footer-tagline">Identity Design &mdash; Built with purpose.</p>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<div class="nav-overlay" id="navOverlay"></div>
+<script>
+    const toggle = document.getElementById('navToggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.getElementById('navOverlay');
+    const scrollBtn = document.getElementById('scrollTop');
+    if (toggle) {
+        toggle.addEventListener('click', () => { nav.classList.toggle('open'); overlay.classList.toggle('open'); });
+        overlay.addEventListener('click', () => { nav.classList.remove('open'); overlay.classList.remove('open'); });
+    }
+    window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', window.scrollY > 300); });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

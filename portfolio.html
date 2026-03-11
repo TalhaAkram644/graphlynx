@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | GRAPHLYNX Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo"><a href="index.html">GRAPH<span class="text-accent">LYNX</span></a></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html" class="active">Work</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="page-header">
+        <h2>Selected Works</h2>
+        <p>A collection of identity and logo design projects.</p>
+
+
+  </section>
+
+
+<section class="portfolio-container" id="work">
+
+    <div class="portfolio-grid">
+
+        <!-- First project - now links to Squarebit case study -->
+        <a href="squarebit.html" class="portfolio-project">
+            <img src="images/logo1.jpg" alt="Squarebit logo preview">
+            <div class="project-caption">
+                <h4>Squarebit</h4>
+                <p>Minimal / Tech</p>
+            </div>
+        </a>
+
+        <!-- Other projects - add links when you create their case study pages -->
+        <a href="legacy.html" class="portfolio-project">  
+        <img src="images/logo2.jpg" alt="1921 Legacy logo preview">
+        <div class="project-caption">
+             <h4>1921 Legacy</h4>
+             <p>Property Identity</p>
+            </div>
+        </a>
+
+      <a href="primeroar.html" class="portfolio-project">
+    <img src="images/logo4.jpg" alt="Primeroar Finance logo preview">
+    <div class="project-caption">
+        <h4>Primeroar Finance</h4>
+        <p>Finance / Identity</p>
+    </div>
+</a>
+
+       <a href="leadbuddy.html" class="portfolio-project">  <img src="images/logo3.jpg" alt="LeadBuddy Preview">
+    <div class="project-caption">
+        <h4>LeadBuddy</h4>          
+        <p>SaaS / Tech</p>       
+    </div>
+</a>
+
+      <a href="nova.html" class="portfolio-project">
+    <img src="images/logo5.jpg" alt="Nova Space Tourism Logo">
+            <div class="project-caption">
+                <h4>Type Exploration</h4>
+                <p>Typography</p>
+            </div>
+        </a>
+
+       <a href="solis.html" class="portfolio-project">
+    <img src="images/logo6.jpg" alt="Solis Energy Logo">
+    <div class="project-caption">
+        <h4>Solis</h4>
+        <p>Solar Energy / Clean Tech</p>
+    </div>
+    </a>
+
+        <a href="pulse.html" class="portfolio-project">
+    <img src="images/logo7.jpg" alt="Pulse Fitness App Logo">
+    <div class="project-caption">
+        <h4>Pulse</h4>
+        <p>Fitness / App Identity</p>
+    </div>
+    </a>
+
+       <a href="vueso.html" class="portfolio-project">
+    <img src="images/logo8.jpg" alt="VUESO Holding Company Logo">
+    <div class="project-caption">
+        <h4>VUESO</h4>
+        <p>Holding Company / Branding</p>
+    </div>
+    </a>
+
+        <a href="cosa.html" class="portfolio-project">
+            <img src="images/logo9.jpg" alt="Logo project preview">
+            <div class="project-caption">
+                <h4>COSA</h4>
+                <p>Geometric / Abstract</p>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="portfolio-footer">
+        <p>Like what you see?</p>
+        <a href="contact.html" class="btn btn-filled">Let's Work Together</a>
+    </div>
+
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">GRAPH<span class="text-accent">LYNX</span></div>
+            <p>Minimalist logo design for the modern visionary.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+            <a href="portfolio.html">Work</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 GRAPHLYNX Studio. All rights reserved.</p>
+        <p class="footer-tagline">Identity Design &mdash; Built with purpose.</p>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<div class="nav-overlay" id="navOverlay"></div>
+<script>
+    const toggle = document.getElementById('navToggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.getElementById('navOverlay');
+    const scrollBtn = document.getElementById('scrollTop');
+    if (toggle) {
+        toggle.addEventListener('click', () => { nav.classList.toggle('open'); overlay.classList.toggle('open'); });
+        overlay.addEventListener('click', () => { nav.classList.remove('open'); overlay.classList.remove('open'); });
+    }
+    window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', window.scrollY > 300); });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

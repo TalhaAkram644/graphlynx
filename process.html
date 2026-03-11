@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Process | GRAPHLYNX Studio</title>
+    <meta name="description" content="A strategic, step-by-step approach to building your brand identity. From discovery to final delivery.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo"><a href="index.html">GRAPH<span class="text-accent">LYNX</span></a></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="process.html" class="active">Process</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h2>From Chaos to Clarity</h2>
+        <p>A strategic approach to building your brand identity.</p>
+    </section>
+
+    <section class="process-container">
+        
+        <div class="process-step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+                <h3>Discovery & Research</h3>
+                <p>We start by diving deep into your brand. I analyze your competitors, define your target audience, and identify the core message you want to project to the world.</p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+                <h3>Concept & Sketching</h3>
+                <p>Ideas hit paper. I explore multiple directions, sketching dozens of iterations before narrowing it down to the strongest concepts that align with your strategy.</p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+                <h3>Refinement & Design</h3>
+                <p>The chosen concepts are digitized and refined. We focus on typography, color psychology, and scalability to ensure your logo looks great on everything.</p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+                <h3>Delivery & Guidelines</h3>
+                <p>You receive a complete brand package. This includes all file formats (vector, print, web) and a style guide on how to use your new identity effectively.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What to Expect Block -->
+    <section class="expect-section">
+        <div class="expect-header">
+            <h2>What to Expect</h2>
+            <p>No surprises. Here's exactly what working with GRAPHLYNX looks like.</p>
+        </div>
+
+        <div class="expect-grid">
+
+            <div class="expect-card">
+                <div class="expect-icon">$</div>
+                <h3>Pricing</h3>
+                <p>Projects start at <strong>$100–$150</strong> for a focused logo identity. Final price depends on scope — fill out the contact form and I'll give you a straight number, no fluff.</p>
+            </div>
+
+            <div class="expect-card">
+                <div class="expect-icon">⚡</div>
+                <h3>Turnaround</h3>
+                <p>First concepts land in your inbox within <strong>1–2 days</strong> of project kickoff. Fast without cutting corners — because clarity doesn't need to take forever.</p>
+            </div>
+
+            <div class="expect-card">
+                <div class="expect-icon">✦</div>
+                <h3>Deliverables</h3>
+                <p>You receive <strong>multiple logo variations</strong> — dark background, light background, icon-only — so your brand works everywhere it needs to.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h3>Ready to get started?</h3>
+        <p style="color: #888; margin-bottom: 1.5rem; font-size: 1rem;">First concepts in 1–2 days. Starting at $100.</p>
+        <a href="contact.html" class="btn btn-filled">Start Your Project</a>
+    </div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">GRAPH<span class="text-accent">LYNX</span></div>
+            <p>Minimalist logo design for the modern visionary.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+            <a href="portfolio.html">Work</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 GRAPHLYNX Studio. All rights reserved.</p>
+        <p class="footer-tagline">Identity Design &mdash; Built with purpose.</p>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<div class="nav-overlay" id="navOverlay"></div>
+<script>
+    const toggle = document.getElementById('navToggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.getElementById('navOverlay');
+    const scrollBtn = document.getElementById('scrollTop');
+    if (toggle) {
+        toggle.addEventListener('click', () => { nav.classList.toggle('open'); overlay.classList.toggle('open'); });
+        overlay.addEventListener('click', () => { nav.classList.remove('open'); overlay.classList.remove('open'); });
+    }
+    window.addEventListener('scroll', () => { scrollBtn.classList.toggle('visible', window.scrollY > 300); });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

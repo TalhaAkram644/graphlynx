@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Project | GRAPHLYNX Studio</title>
+    <meta name="description" content="Start your logo project with GRAPHLYNX Studio. Share your project details and we'll get back to you shortly.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo"><a href="index.html">GRAPH<span class="text-accent">LYNX</span></a></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+
+        <div class="contact-header">
+            <h2>Start your logo project</h2>
+            <p>Looking for a clean, modern logo that actually fits your brand?
+            Share a few details below and I'll get back to you shortly.</p>
+        </div>
+
+        <!-- ✅ SUCCESS MESSAGE (hidden until form is sent) -->
+        <div class="form-success" id="formSuccess" style="display:none;">
+            <div class="form-success-inner">
+                <div class="success-icon">✓</div>
+                <h3>Message received!</h3>
+                <p>Thanks for reaching out. I'll review your details and get back to you within 24 hours.</p>
+            </div>
+        </div>
+
+        <form id="contactForm" action="https://formspree.io/f/mgonkwpa" method="POST" class="contact-form">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Package</label>
+                <select id="budget" name="budget">
+                    <option value="" disabled selected>Select a package...</option>
+                    <option value="basic">Basic — $120</option>
+                    <option value="standard">Standard — $180 (Recommended)</option>
+                    <option value="premium">Premium — $280</option>
+                    <option value="unsure">Not sure yet — help me decide</option>
+                </select>
+            </div>
+
+            <!-- Package preview — shown on selection -->
+            <div class="package-preview" id="packagePreview">
+
+                <div class="pkg-card" id="pkg-basic">
+                    <div class="pkg-card-header">
+                        <span class="pkg-name">Basic</span>
+                        <span class="pkg-price">$120</span>
+                    </div>
+                    <p class="pkg-desc">For small startups or personal brands just getting started.</p>
+                    <ul class="pkg-includes">
+                        <li>1 logo concept</li>
+                        <li>2 revisions</li>
+                        <li>High-resolution PNG</li>
+                        <li>Transparent background</li>
+                        <li>Black &amp; white version</li>
+                    </ul>
+                    <p class="pkg-delivery">&#9201; Delivery: 2&#8211;3 days</p>
+                </div>
+
+                <div class="pkg-card" id="pkg-standard">
+                    <div class="pkg-card-header">
+                        <span class="pkg-name">Standard <span class="pkg-badge">Most Popular</span></span>
+                        <span class="pkg-price">$180</span>
+                    </div>
+                    <p class="pkg-desc">Most clients land here. The sweet spot between value and depth.</p>
+                    <ul class="pkg-includes">
+                        <li>2&#8211;3 logo concepts</li>
+                        <li>4 revisions</li>
+                        <li>Vector files (AI / EPS / SVG)</li>
+                        <li>High-resolution PNG</li>
+                        <li>Transparent files</li>
+                        <li>Color + black &amp; white variations</li>
+                        <li>Social media&#8211;ready files</li>
+                    </ul>
+                    <p class="pkg-delivery">&#9201; Delivery: 2&#8211;3 days</p>
+                </div>
+
+                <div class="pkg-card" id="pkg-premium">
+                    <div class="pkg-card-header">
+                        <span class="pkg-name">Premium</span>
+                        <span class="pkg-price">$280</span>
+                    </div>
+                    <p class="pkg-desc">For brands that want a complete identity to build from.</p>
+                    <ul class="pkg-includes">
+                        <li>3&#8211;4 logo concepts</li>
+                        <li>Unlimited revisions</li>
+                        <li>Full vector source files</li>
+                        <li>Color palette</li>
+                        <li>Typography suggestions</li>
+                        <li>Social media files</li>
+                        <li>Basic logo usage guide</li>
+                    </ul>
+                    <p class="pkg-delivery">&#9201; Delivery: 3&#8211;4 days</p>
+                </div>
+
+                <div class="pkg-card" id="pkg-unsure">
+                    <div class="pkg-card-header">
+                        <span class="pkg-name">Not Sure Yet</span>
+                    </div>
+                    <p class="pkg-desc">No problem — just describe your project below and I will recommend the right package for you. No commitment yet.</p>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" rows="5"
+                    placeholder="Brand name, industry, style preference, and anything else that helps..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-filled submit-btn">Send Details</button>
+
+        </form>
+
+        <div class="direct-contact">
+            <p>Prefer email? <a href="mailto:hello@graphlynx.studio">hello@graphlynx.studio</a></p>
+        </div>
+
+        <div class="process-hint">
+            <p>Not sure how it works? <a href="process.html">View the process</a></p>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">GRAPH<span class="text-accent">LYNX</span></div>
+                <p>Minimalist logo design for the modern visionary.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="portfolio.html">Work</a>
+                <a href="process.html">Process</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GRAPHLYNX Studio. All rights reserved.</p>
+            <p class="footer-tagline">Identity Design &mdash; Built with purpose.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">&#8593;</button>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <style>
+        .form-success { text-align: center; padding: 60px 20px; }
+        .form-success-inner { max-width: 420px; margin: 0 auto; }
+        .success-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: #00e5ff; color: #000;
+            font-size: 28px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .form-success h3 { font-size: 1.6rem; margin-bottom: 12px; }
+        .form-success p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+    </style>
+
+    <script>
+        // ── Formspree AJAX Submission ──────────────────────────────────────────
+        var form = document.getElementById('contactForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // stop normal page redirect
+
+            var btn = form.querySelector('.submit-btn');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+
+            try {
+                var response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Hide form, show success message
+                    form.style.display = 'none';
+                    document.querySelector('.contact-header').style.display = 'none';
+                    document.getElementById('formSuccess').style.display = 'block';
+                } else {
+                    btn.textContent = 'Send Details';
+                    btn.disabled = false;
+                    alert('Something went wrong. Please try again or email us directly.');
+                }
+            } catch (err) {
+                btn.textContent = 'Send Details';
+                btn.disabled = false;
+                alert('Connection error. Please check your internet and try again.');
+            }
+        });
+
+        // Package preview
+        document.getElementById('budget').addEventListener('change', function() {
+            var val = this.value;
+            var preview = document.getElementById('packagePreview');
+            var cards = document.querySelectorAll('.pkg-card');
+
+            cards.forEach(function(c) { c.classList.remove('active'); });
+
+            if (val) {
+                preview.classList.add('visible');
+                var target = document.getElementById('pkg-' + val);
+                if (target) { target.classList.add('active'); }
+            } else {
+                preview.classList.remove('visible');
+            }
+        });
+
+        // Mobile nav
+        var navToggle = document.getElementById('navToggle');
+        var nav = document.querySelector('nav');
+        var overlay = document.getElementById('navOverlay');
+        var scrollBtn = document.getElementById('scrollTop');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                overlay.classList.toggle('open');
+            });
+            overlay.addEventListener('click', function() {
+                nav.classList.remove('open');
+                overlay.classList.remove('open');
+            });
+        }
+
+        // Scroll to top
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
