@@ -369,7 +369,23 @@
         toggle.addEventListener("click", () => { nav.classList.toggle("open"); overlay.classList.toggle("open"); });
         overlay.addEventListener("click", () => { nav.classList.remove("open"); overlay.classList.remove("open"); });
     }
-    window.addEventListener("scroll", () => { scrollBtn.classList.toggle("visible", window.scrollY > 300); });
+    let scrollTicking = false;
+    let isScrollVisible = false;
+    const updateScrollTopVisibility = () => {
+        scrollTicking = false;
+        const shouldShow = window.scrollY > 300;
+        if (shouldShow !== isScrollVisible) {
+            isScrollVisible = shouldShow;
+            scrollBtn.classList.toggle("visible", shouldShow);
+        }
+    };
+    window.addEventListener("scroll", () => {
+        if (!scrollTicking) {
+            scrollTicking = true;
+            window.requestAnimationFrame(updateScrollTopVisibility);
+        }
+    }, { passive: true });
+    updateScrollTopVisibility();
     scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 </script>
 </body>
