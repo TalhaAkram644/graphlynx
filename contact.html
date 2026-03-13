@@ -252,13 +252,23 @@
         }
 
         // Scroll to top
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
+        var scrollTicking = false;
+        var isScrollVisible = false;
+        function updateScrollTopVisibility() {
+            scrollTicking = false;
+            var shouldShow = window.scrollY > 300;
+            if (shouldShow !== isScrollVisible) {
+                isScrollVisible = shouldShow;
+                scrollBtn.classList.toggle('visible', shouldShow);
             }
-        });
+        }
+        window.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                scrollTicking = true;
+                window.requestAnimationFrame(updateScrollTopVisibility);
+            }
+        }, { passive: true });
+        updateScrollTopVisibility();
         scrollBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
