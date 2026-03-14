@@ -281,8 +281,23 @@
     if (toggle) {
         toggle.addEventListener("click", () => { nav.classList.toggle("open"); overlay.classList.toggle("open"); });
         overlay.addEventListener("click", () => { nav.classList.remove("open"); overlay.classList.remove("open"); });
+        nav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => { nav.classList.remove("open"); overlay.classList.remove("open"); });
+        });
     }
-    window.addEventListener("scroll", () => { scrollBtn.classList.toggle("visible", window.scrollY > 300); });
+    let scrollTicking = false;
+    window.addEventListener("scroll", () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                const show = window.scrollY > 300;
+                if (scrollBtn.classList.contains("visible") !== show) {
+                    scrollBtn.classList.toggle("visible", show);
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
     scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 </script>
 </body>
